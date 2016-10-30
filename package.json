@@ -4,13 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch": "./node_modules/watchify/bin/cmd.js -t babelify ./app.js -o ./build.js",
+    "build": "./node_modules/browserify/bin/cmd.js app.js -o build.js -t [ babelify ]"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
+    "react-redux": "^4.4.5",
     "redux": "^3.6.0"
   },
   "devDependencies": {
@@ -19,9 +21,5 @@
     "babelify": "^7.3.0",
     "exorcist": "^0.4.0",
     "watchify": "^3.7.0"
-  },
-  "scripts": {
-    "watch": "./node_modules/watchify/bin/cmd.js -t babelify ./app.js -o ./build.js",
-    "build": "./node_modules/browserify/bin/cmd.js app.js -o build.js -t [ babelify ]"
   }
 }
